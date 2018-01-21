@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./style/index.css">
 
     <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
-    
+    <script type="text/javascript" src="./node_modules/systemjs/dist/system.js"></script>
+    <script type="text/javascript" src="./add.js"></script>
+
 </head>
 
 <body>
@@ -19,7 +21,32 @@
         <div class="finger finger3"></div>
         <div class="finger finger4"></div>
         <div class="finger finger5"></div>
+
+        <span class="addOne">+1</span>
     </div>
+
+    <script type="text/javascript">
+
+        // 配置baseUrl
+        SystemJS.config({
+            baseURL: '/dianzan/script',
+        });
+
+        // 加载模块到m
+        SystemJS.import('index-es.js').then(function (m) {
+            //将thumb挂载到jquery的插件
+            $.extend({
+                thumb: m.default.Thumb
+            });
+            // 调用回调函数
+            callBack();
+        });
+
+        function callBack() {
+            var f = new $.thumb(0, $('.main'));
+            f.clickButton();
+        }
+    </script>
 
 </body>
 
