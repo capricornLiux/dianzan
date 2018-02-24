@@ -1,6 +1,3 @@
-"use strict";
-function add(num) {
+window.add = function (num) {
     return num + 1;
 }
-
-module.exports = add;

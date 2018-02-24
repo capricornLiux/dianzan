@@ -13,7 +13,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Praise = function () {
-    // 点击的次数和元素
+    /**
+     * 构造方法
+     * @param {点击的次数} num 
+     * @param {点击的元素} element 
+     */
     function Praise(num, element) {
         _classCallCheck(this, Praise);
 
@@ -30,6 +34,7 @@ var Praise = function () {
 
             this.element.click(function () {
                 if (_this.num < 10) {
+
                     // 处理大拇指的样式
                     _this.element.css('-webkit-filter', 'grayscale(0)');
 
@@ -43,7 +48,6 @@ var Praise = function () {
                     _this.num = add(_this.num);
 
                     // 移除点赞动画
-                    // alert(`点赞${this.num}`);
                     setTimeout(function () {
                         $(".addOne").animate({
                             top: 0,
@@ -77,12 +81,8 @@ var Thumb = function (_Praise) {
     return Thumb;
 }(Praise);
 
-// const thumb = new Thumb(0, $('.main'));
-// thumb.clickButton();
-
 // 导出模块
+// export default {Thumb};
 
 
-exports.default = {
-    Thumb: Thumb
-};
+exports.default = Thumb;

@@ -1,6 +1,10 @@
 'use strict';
 class Praise {
-    // 点击的次数和元素
+    /**
+     * 构造方法
+     * @param {点击的次数} num 
+     * @param {点击的元素} element 
+     */
     constructor(num, element) {
         this.num = num;
         this.element = element;
@@ -9,6 +13,7 @@ class Praise {
     clickButton() {
         this.element.click(() => {
             if (this.num < 10) {
+
                 // 处理大拇指的样式
                 this.element.css('-webkit-filter', 'grayscale(0)');
 
@@ -22,13 +27,13 @@ class Praise {
                 this.num = add(this.num);
 
                 // 移除点赞动画
-                // alert(`点赞${this.num}`);
-                setTimeout(function () {
+                setTimeout(() => {
                     $(".addOne").animate({
                         top: 0,
                         opacity: 'toggle'
                     }, 500);
                 }, 1000);
+
             } else {
                 // 大拇指置灰
                 this.element.css('-webkit-filter', 'grayscale(1)');
@@ -47,10 +52,6 @@ class Thumb extends Praise {
     }
 }
 
-// const thumb = new Thumb(0, $('.main'));
-// thumb.clickButton();
-
 // 导出模块
-export default {
-    Thumb
-};
+// export default {Thumb};
+export default Thumb;

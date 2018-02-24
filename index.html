@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>点赞</title>
+    <!-- 样式文件 -->
     <link rel="stylesheet" href="./style/index.css">
 
-    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="./node_modules/systemjs/dist/system.js"></script>
+    <!-- jquery -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- systemjs 模块加载器 -->
+    <script src="https://cdn.bootcss.com/systemjs/0.21.0/system.js"></script>
+
+    <!--  -->
     <script type="text/javascript" src="./add.js"></script>
 
 </head>
@@ -26,6 +32,7 @@
     </div>
 
     <script type="text/javascript">
+
 
         // 配置baseUrl
         SystemJS.config({
@@ -46,6 +53,7 @@
             var f = new $.thumb(0, $('.main'));
             f.clickButton();
         }
+        
     </script>
 
 </body>
