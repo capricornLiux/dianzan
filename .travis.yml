@@ -1,7 +1,5 @@
 language: node_js
 node_js:
   - "8"
-# sudo: required
-# before_install: sudo pip install foo
 script: ./test.sh
 install: ./install-dependencies.sh
